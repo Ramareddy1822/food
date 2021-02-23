@@ -1,4 +1,4 @@
-package com.rajendra.foodapp;
+package com.ramareddy.foodapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,15 +7,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.rajendra.foodapp.adapter.AllMenuAdapter;
-import com.rajendra.foodapp.adapter.PopularAdapter;
-import com.rajendra.foodapp.adapter.RecommendedAdapter;
-import com.rajendra.foodapp.model.Allmenu;
-import com.rajendra.foodapp.model.FoodData;
-import com.rajendra.foodapp.model.Popular;
-import com.rajendra.foodapp.model.Recommended;
-import com.rajendra.foodapp.retrofit.ApiInterface;
-import com.rajendra.foodapp.retrofit.RetrofitClient;
+import com.ramareddy.foodapp.adapter.AllMenuAdapter;
+import com.ramareddy.foodapp.adapter.PopularAdapter;
+import com.ramareddy.foodapp.adapter.RecommendedAdapter;
+import com.ramareddy.foodapp.model.Allmenu;
+import com.ramareddy.foodapp.model.FoodData;
+import com.ramareddy.foodapp.model.Popular;
+import com.ramareddy.foodapp.model.Recommended;
+import com.ramareddy.foodapp.retrofit.ApiInterface;
+import com.ramareddy.foodapp.retrofit.RetrofitClient;
 
 import java.util.List;
 
@@ -53,26 +53,11 @@ public class MainActivity extends AppCompatActivity {
                 getRecommendedData(foodDataList.get(0).getRecommended());
 
                 getAllMenu(foodDataList.get(0).getAllmenu());
-                // lets run it.
-                // we have fetched data from server.
-                // now we have to show data in app using recycler view
-                // lets make recycler view adapter
-                // we have setup and bind popular section
-                // in a same way we add recommended and all menu items
-                // we add two adapter class for allmenu and recommended items.
-                // so lets do it fast.
-
-            }
-
             @Override
             public void onFailure(Call<List<FoodData>> call, Throwable t) {
                 Toast.makeText(MainActivity.this, "Server is not responding.", Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
-
     }
 
     private void  getPopularData(List<Popular> popularList){
